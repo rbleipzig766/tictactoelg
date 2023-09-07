@@ -1,16 +1,32 @@
-def print_board(board): for row in board: print(" | ".join(row)) print("-" * 9)
+def print_board(board):
+    for row in board:
+        print(" | ".join(row))
 
-def main(): board = [[" " for _ in range(3)] for _ in range(3)] players = ["X", "O"] current_player = 0
+def main():
+    board = [[" " for _ in range(3)] for _ in range(3)]
 
-while True:
-    print_board(board)
-    print(f"Player {players[current_player]}'s turn")
+    # Spieler-Wechsel (X startet)
+    current_player = "X"
 
-    row = int(input("Enter row (0, 1, or 2): "))
-    col = int(input("Enter column (0, 1, or 2): "))
+    while True:
+        print_board(board)
+        print(f"Player {current_player}'s turn")
 
-    board[row][col] = players[current_player]
+        # Benutzereingabe für den Zug
+        row = int(input("Enter row (0, 1, or 2): "))
+        col = int(input("Enter column (0, 1, or 2): "))
 
-    current_player = 1 - current_player
+        # Überprüfung, ob das Feld bereits belegt ist
+        if board[row][col] == " ":
+            board[row][col] = current_player
+            # Spieler-Wechsel
+            if current_player == "X":
+                current_player = "O"
+            else:
+                current_player = "X"
+        else:
+            continue
 
-if name == "main": main()
+if __name__ == "__main__":
+    main()
+
