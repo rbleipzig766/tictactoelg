@@ -17,6 +17,8 @@ Algorithm:
             The field needs to be empty
             Show the players symbol on the 3x3 surface
             Switch to the other player.
+        If game is over:
+            Update the scores and upload it to the file 
 
     The winner is:
         who has three x´s or o´s in a row (rows, columns, and diagonals)
@@ -27,7 +29,7 @@ Algorithm:
     Display Result:
         Display winner or if it´s a draw
 
-    Display winner or if it´s a draw
+
 
 
 
